@@ -24,13 +24,13 @@ const AddItem = () => {
 
     return (
         <div className='w-50 mx-auto border border-secondary rounded p-4 my-4'>
-            <h2 className='fw-bold'>Please add your item</h2>
+            <h2 className='fw-bold clr-change'>Please add your item</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
                 <textarea className='mb-2' placeholder='Description' {...register("description")} />
                 <input className='mb-2' placeholder='Price' type="number" {...register("price")} />
-                <input className='mb-2' placeholder='Quantity' type="number" {...register("quantity")} />
-                <input className='mb-2' placeholder='Name Of Supplier' {...register("supplier name")} />
+                <input className='mb-2' placeholder='Item quantity' type="number" {...register("stoke")} />
+                <input className='mb-2' placeholder='Name Of Supplier' {...register("seller")} />
                 <input className='mb-2' placeholder='Photo URL' type="text" {...register("img")} />
                 <input className='btn-us' type="submit" value="Add Item" />
             </form>

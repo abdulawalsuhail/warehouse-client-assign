@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useServices from '../../hooks/useServices';
 import './ManageItem.css'
 
 
 const ManageItem = () => {
     const [services, setServices] = useServices();
+    const navigate = useNavigate()
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
@@ -21,13 +23,17 @@ const ManageItem = () => {
                 })
         }
     }
+    const handleAddItemBtn =()=>{
+        navigate('/additem')
+    }
     return (
         <div className='w-50 mx-auto'>
-            <h2 className='fw-bold'>Manage your item</h2>
+            <h2 className='fw-bold clr-change'>Manage your item</h2>
             <div className='manage-item'>
                 {
                     services.map(service => <div key={service._id}>
                         <div className='manage-container'>
+                            <img style={{width:'30px', borderRadius:"20px", marginRight:"8px"}} src={service.img}/>
                             <span>{service.name} </span>
                             <h5>${service.price}</h5>
                             <button className='btn-us' onClick={() => handleDelete(service._id)}>Delete</button>
@@ -35,8 +41,8 @@ const ManageItem = () => {
 
                     </div>)
                 }
-                <button className='btn-us mt-4' to="/additem">Add Item</button>
             </div>
+                <button className='btn-us mt-4' onClick={handleAddItemBtn}>Add Item</button>
         </div>
     );
 };

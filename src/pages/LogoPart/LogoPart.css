@@ -1,0 +1,9 @@
+.logo-part{
+    display: flex;
+}
+@media only screen and (max-width:576px) {
+    .logo-part{
+        display: block;
+        text-align: center;
+    }
+}

@@ -1,7 +1,7 @@
-.service-container {
+.serviceNew-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  /* gap: 24px; */
   background-color: rgba(223, 92, 5, 0.836);
   
 }
@@ -9,4 +9,13 @@
     color: #fff;
     font-weight: bold;
     padding: 10px;
+}
+@media only screen and (max-width:576px) {
+  .serviceNew-container{
+      grid-template-columns: repeat(1, 1fr);
+      width: 900px;
+  }
+  .serviceNew-container img{
+    
+  }
 }

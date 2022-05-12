@@ -5,6 +5,7 @@ import './Login.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Loading from '../../Shared/Loading/Loading';
 
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
@@ -125,6 +126,7 @@ const Login = () => {
             </form>
             <button onClick={handleGoogleSignIn}>Google SignIn</button>
             <p className='text-center mt-3'>Don't have an account? <Link className='sign-link fw-bold pe-auto text-decoration-none' to="/signup">Sign up</Link></p>
+            <Loading/>
         </div>
     );
 };

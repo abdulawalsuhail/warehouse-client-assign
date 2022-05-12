@@ -2,8 +2,9 @@ import React from 'react';
 
 const MyItem = () => {
     return (
-        <div>
-            <h2>This is My Item</h2>
+        <div className='text-center'>
+            <h2>My Item</h2>
+            
         </div>
     );
 };

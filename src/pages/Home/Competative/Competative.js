@@ -4,7 +4,7 @@ import Post1 from '../../../images/post/post-1.png'
 
 const Competative = () => {
     return (
-        <div className='d-flex  g-4 m-5'>
+        <div className='competative-container  g-4 m-5'>
             <div className='m-5'>
                 <h5 className='clr-change'>Supply Chain Technology & Customized Solutions.</h5>
                 <h1 className='my-4'>Competitive Advantages For Largest Companies!</h1>

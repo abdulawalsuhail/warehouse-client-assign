@@ -4,7 +4,7 @@ import './ServiceNew.css'
 
 const ServiceNew = () => {
     return (
-        <div className=' service-container'>
+        <div className=' serviceNew-container'>
             <div>
                 <img style={{ width: '750px',}} src={Videos} alt='' />
             </div>

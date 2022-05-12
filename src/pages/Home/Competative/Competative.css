@@ -1,28 +1,41 @@
-.clr-change{
-    color: lightsalmon;
+.competative-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.btn-us{
-    background-color: rgba(223, 92, 5, 0.836);
-    color: #fff;
-    padding: 12px;
-    border: 1px solid rgba(223, 92, 5, 0.836);
-    font-weight: bold;
-    border-radius: 8px;
-    transition: 1s ease-in-out;
+.clr-change {
+  color: lightsalmon;
 }
-.btn-us:hover{
-    background-color: #fff;
-    color: rgba(223, 92, 5, 0.836);
-    border: 1px solid rgba(223, 92, 5, 0.836);
+
+.btn-us {
+  background-color: rgba(223, 92, 5, 0.836);
+  color: #fff;
+  padding: 12px;
+  border: 1px solid rgba(223, 92, 5, 0.836);
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 1s ease-in-out;
 }
-.btn-hover{
-    color: #000;
-    font-weight: 700;
-    margin-left: 20px;
-    cursor: pointer;
-    transition: 1s ease-in-out;
+.btn-us:hover {
+  background-color: #fff;
+  color: rgba(223, 92, 5, 0.836);
+  border: 1px solid rgba(223, 92, 5, 0.836);
 }
-.btn-hover:hover{
-    color: rgba(223, 92, 5, 0.836);
+.btn-hover {
+  color: #000;
+  font-weight: 700;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+}
+.btn-hover:hover {
+  color: rgba(223, 92, 5, 0.836);
+}
+
+
+
+@media only screen and (max-width:576px) {
+    .competative-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
