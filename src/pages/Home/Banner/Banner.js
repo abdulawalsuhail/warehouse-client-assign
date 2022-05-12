@@ -13,7 +13,6 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>Office Meeting hours</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -24,7 +23,6 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Client Meeting Time</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -35,7 +33,6 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Personal <span className='text-success'> Project Time</span></h3>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

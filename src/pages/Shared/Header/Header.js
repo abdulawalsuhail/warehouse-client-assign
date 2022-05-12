@@ -4,6 +4,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import images from '../../../images/logo/images.png'
 import { BsFacebook } from 'react-icons/bs';
 import { FiInstagram } from 'react-icons/fi';
 import { AiFillTwitterCircle } from 'react-icons/ai';
@@ -19,7 +20,7 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg" sticky='top' bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
-                        <img height={30} src='' className="rounded" alt="" /> WareHouse
+                        <img height={50} src={images} className="rounded" alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -36,7 +37,9 @@ const Header = () => {
                                     :
                                     <Nav.Link as={Link} to="login">
                                         Login
-                                    </Nav.Link>}
+                                    </Nav.Link>
+                            }
+                            <Nav.Link>{user?.email.slice(0, 10)}</Nav.Link>
                         </Nav>
                         <Nav>
                             <div className='p-2 fs-4 text-white'>

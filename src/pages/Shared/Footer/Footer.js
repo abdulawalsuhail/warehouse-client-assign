@@ -25,7 +25,7 @@ const Footer = () => {
                         <p>100/b Jafrabad, Pulper,
                             Mohammadpur, Dhaka-1207</p>
                         <a className='text-info' href="https://mail.google.com/mail/u/0/#inbox"><AiFillMail /> abdullahsuhail43@gmail.com</a><br />
-                        <a className='text-dark' href="tel:+8801403858029"><BsFillTelephoneFill /> 01403858029</a>
+                        <a className='text-white' href="tel:+8801403858029"><BsFillTelephoneFill /> 01403858029</a>
                     </Col>
                     <Col>
                         <h2>Legal</h2>

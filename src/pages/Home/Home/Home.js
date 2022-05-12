@@ -1,6 +1,11 @@
 import React from 'react';
+import GolobalDelivary from '../../GolobalDelivary/GolobalDelivary';
+import LogoPart from '../../LogoPart/LogoPart';
+import ManageItem from '../../ManageItem/ManageItem';
+import ServiceNew from '../../ServiceNew/ServiceNew';
 import Banner from '../Banner/Banner';
 import Competative from '../Competative/Competative';
+import Services from '../Services/Services';
 
 
 const Home = () => {
@@ -9,6 +14,11 @@ const Home = () => {
         <>
             <Banner/>
             <Competative/>
+            <Services/>
+            <GolobalDelivary/>
+            <hr/>
+            <LogoPart/>
+            <ServiceNew/>
         </>
 
     );
