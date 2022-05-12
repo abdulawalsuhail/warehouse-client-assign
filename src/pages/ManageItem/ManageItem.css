@@ -1,0 +1,17 @@
+.manage-container{
+    border: 2px solid rebeccapurple;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 10px;
+}
+.manage-item{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+@media only screen and (max-width:576px) {
+    .manage-item{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

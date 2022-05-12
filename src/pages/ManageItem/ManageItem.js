@@ -1,5 +1,7 @@
 import React from 'react';
 import useServices from '../../hooks/useServices';
+import './ManageItem.css'
+
 
 const ManageItem = () => {
     const [services, setServices] = useServices();
@@ -21,13 +23,20 @@ const ManageItem = () => {
     }
     return (
         <div className='w-50 mx-auto'>
-            <h2>Manage your services</h2>
-            {
-                services.map(service => <div key={service._id}>
-                    <h5>{service.name} <button onClick={() => handleDelete(service._id)}>Delete</button></h5>
+            <h2 className='fw-bold'>Manage your item</h2>
+            <div className='manage-item'>
+                {
+                    services.map(service => <div key={service._id}>
+                        <div className='manage-container'>
+                            <span>{service.name} </span>
+                            <h5>${service.price}</h5>
+                            <button className='btn-us' onClick={() => handleDelete(service._id)}>Delete</button>
+                        </div>
 
-                </div>)
-            }
+                    </div>)
+                }
+                <button className='btn-us mt-4' to="/additem">Add Item</button>
+            </div>
         </div>
     );
 };
