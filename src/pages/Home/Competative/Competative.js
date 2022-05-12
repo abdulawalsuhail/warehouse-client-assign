@@ -1,6 +1,7 @@
 import React from 'react';
 import './Competative.css'
 import Post1 from '../../../images/post/post-1.png'
+import { FaBeer } from 'react-icons/fa';
 
 const Competative = () => {
     return (
