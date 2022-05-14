@@ -19,7 +19,9 @@ const Service = ({ service }) => {
                 <p><small><span className='fw-bold clr-change'>Seller</span>: {seller}</small></p>
                 <p><small><span className='fw-bold clr-change'>Product Stock</span>: {stoke}</small></p>
             </div>
-            <button onClick={() => navigateToServiceDetail(_id)} className='btn-us'>Updated {name}</button>
+            <div>
+                <button onClick={() => navigateToServiceDetail(_id)} className='btn-us'>Updated {name}</button>
+            </div>
         </div>
     );
 };

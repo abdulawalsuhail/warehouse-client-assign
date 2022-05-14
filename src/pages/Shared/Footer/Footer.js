@@ -4,7 +4,7 @@ import { BsFacebook } from 'react-icons/bs';
 import { AiFillMail } from 'react-icons/ai';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { FiInstagram } from 'react-icons/fi';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 const Footer = () => {
     const today = new Date();

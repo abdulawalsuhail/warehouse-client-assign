@@ -1,8 +1,4 @@
-/* .blogs-container img{
-    width: 355px;
-    margin-right: 40px;
-    /* padding: 20px; */
-/* } */ */
+
 .blogs-container{
     display: flex;
     background-color: #f8f8f8 ;
@@ -17,10 +13,7 @@
     .blogs-container{
         flex-direction: column;
     }
-    /* .blogs-container img{
-        width: 100%;
-        margin-bottom: 20px;
-    } */
+    
     .blogs-text{
         flex-direction: column;
     }

@@ -126,7 +126,7 @@ const Login = () => {
             </form>
             <button onClick={handleGoogleSignIn}>Google SignIn</button>
             <p className='text-center mt-3'>Don't have an account? <Link className='sign-link fw-bold pe-auto text-decoration-none' to="/signup">Sign up</Link></p>
-            <Loading/>
+            {/* <Loading/> */}
         </div>
     );
 };

@@ -23,7 +23,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/about' element={<About />} />
-        <Route path='/item/:serviceId' element={<ServiceDetail />} />
+        <Route path='/item/:itemId' element={<ServiceDetail />} />
         <Route path='/myitem' element={
           <RequireAuth>
             <MyItem />

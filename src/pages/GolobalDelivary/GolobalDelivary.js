@@ -2,6 +2,8 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import './GolobalDelivary.css'
 
+import { BsArrowRightShort } from 'react-icons/bs';
+
 const GolobalDelivary = () => {
     return (
         <div>
@@ -19,7 +21,7 @@ const GolobalDelivary = () => {
                         <Card.Text>
                             We can arrange and provides with the comprehensive service in the sphere of urgent, valuable, fragile or any cargoes conscientious accelerated delivery by air.
                         </Card.Text>
-                        <a className='btn-hover'>Read more</a>
+                        <a className='btn-hover'>Read more<BsArrowRightShort/></a>
                     </Card.Body>
 
                 </Card>
@@ -31,7 +33,7 @@ const GolobalDelivary = () => {
                         <Card.Text>
                             We provides with the main types of basic conditions International sea transportation is implemented by our partners’ vessels, the largest ocean carriers.
                         </Card.Text>
-                        <a className='btn-hover'>Read more</a>
+                        <a className='btn-hover'>Read more<BsArrowRightShort/></a>
                     </Card.Body>
 
                 </Card>
@@ -43,7 +45,7 @@ const GolobalDelivary = () => {
                         <Card.Text>
                             We provides a wide range of transportation services including quality international road transportation of cargoes & goods arriving from the ports all over the world.
                         </Card.Text>
-                        <a className='btn-hover'>Read more</a>
+                        <a className='btn-hover'>Read more<BsArrowRightShort/></a>
                     </Card.Body>
 
                 </Card>

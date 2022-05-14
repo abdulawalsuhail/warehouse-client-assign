@@ -1,7 +1,7 @@
-.about-banner2 {
+/* .about-banner2 {
   width: 450px;
   margin-left: 30px;
-}
+} */
 .more-info{
     margin-left: 30px;
 }
@@ -14,9 +14,9 @@
   .about-container {
     flex-direction: column;
   }
-  .about-banner{
+  /* .about-banner{
       width: 100%;
-  }
+  } */
   .about-container img{
       width: 100%;
       margin: 0;
@@ -24,8 +24,8 @@
   .more-info{
       margin: 0;
   }
-  .about-banner2 img{
+  /* .about-banner2 img{
       width: 400px;
       margin: 0;
-  }
+  } */
 }

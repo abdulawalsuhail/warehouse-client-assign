@@ -3,30 +3,32 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const ServiceDetail = () => {
-    const { serviceId } = useParams();
+    const { itemId } = useParams();
+    
     const [service, setService] = useState({});
+    // console.log(service)
 
     useEffect(() => {
-        const url = `http://localhost:5000/quantity/${serviceId}`;
-        console.log(url);
+        const url = `https://assigenment-11.herokuapp.com/item/${itemId}`;
+        // console.log(url);
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data));
 
-    }, [serviceId, service])
+    }, [itemId])
 
     // quantity operation
     const handleDelivered = e => {
         e.preventDefault()
         let quantity = service?.quantity
-        quantity = parseInt(quantity) - 1
-        console.log(quantity)
-        if (quantity < 0) {
+        quantity = parseInt(quantity) - quantity
+        // console.log(quantity)
+        if (quantity > 0) {
             return alert("Quantity can not be less then zero")
         }
 
-        const url = `http://localhost:5000/quantity/${serviceId}`
-        console.log(url)
+        const url = `https://assigenment-11.herokuapp.com/item/${itemId}`
+        // console.log(url)
         fetch(url, {
             method: "PUT",
             headers: {
@@ -35,28 +37,31 @@ const ServiceDetail = () => {
             body: JSON.stringify({ quantity })
         })
             .then(res => res.json())
-            .then(data => {
-                setService({ ...data, quantity: quantity })
-                toast('Successfully Delivered')
-            })
+            .then(data => console.log(data))
     }
+
+    // add 
     const handleUpdateQuantity = (e) => {
         e.preventDefault()
-        let quantity = service?.quantity
+        let quantity = service?.quantity;
+        service.stoke =35;
+        console.log(service)
+        // console.log(quantity)
         const addQuantity = parseInt(e.target.quantity.value)
-        console.log(addQuantity)
-        if (addQuantity < 0) {
-            quantity = parseInt(quantity) + addQuantity
-            // console.log(quantity)
-            const updateInventory = { quantity }
-            const url = `http://localhost:5000/item/${serviceId}`
-            console.log(url)
+        // console.log(addQuantity)
+        if (addQuantity > 0) {
+            quantity = parseInt(quantity + addQuantity)
+            console.log(quantity)
+            const updateInventory = { stoke: quantity }
+            console.log(updateInventory)
+            const url = `https://assigenment-11.herokuapp.com/item/${itemId}`
+            // console.log(url)
             fetch(url, {
                 method: "PUT",
                 headers: {
                     "content-type": "application/json"
                 },
-                body: JSON.stringify({ updateInventory })
+                body: JSON.stringify(service)
             })
                 .then(res => res.json())
                 .then(data => {
