@@ -63,11 +63,37 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/home"
 
-   useEffect(()=>{
+   /* useEffect(()=>{
     if(user){
         navigate(from,{replace:true});
     }
-   },[user])
+   },[user]) */
+
+
+   useEffect(() => {
+    if (user) {
+      const url = "https://assigenment-11.herokuapp.com/login";
+      fetch(url, {
+        method: "POST",
+        body: JSON.stringify({
+          title: "foo",
+          body: "bar",
+          email: user.email,
+        }),
+        headers: {
+            "content-type": "application/json",
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            localStorage.setItem("accessToken", data.accessToken);
+            navigate(from, { replace: true });
+          });
+      }
+    }, [user]);
+
+
+
 
    const resetPassword = async() => {
        if(userInfo.email){

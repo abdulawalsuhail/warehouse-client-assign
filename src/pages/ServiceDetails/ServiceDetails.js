@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 const ServiceDetail = () => {
     const { itemId } = useParams();
-    
+
     const [service, setService] = useState({});
     // console.log(service)
 
@@ -15,15 +15,16 @@ const ServiceDetail = () => {
             .then(res => res.json())
             .then(data => setService(data));
 
-    }, [itemId])
+    }, [itemId,service])
 
     // quantity operation
     const handleDelivered = e => {
         e.preventDefault()
         let quantity = service?.quantity
-        quantity = parseInt(quantity) - quantity
-        // console.log(quantity)
-        if (quantity > 0) {
+        console.log(quantity)
+        quantity = parseInt(quantity) - 1
+        console.log(quantity)
+        if (quantity < 0) {
             return alert("Quantity can not be less then zero")
         }
 
@@ -37,23 +38,24 @@ const ServiceDetail = () => {
             body: JSON.stringify({ quantity })
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                setService({ ...data, quantity })
+                toast('Successfully Delivered')
+            })
     }
 
     // add 
     const handleUpdateQuantity = (e) => {
         e.preventDefault()
         let quantity = service?.quantity;
-        service.stoke =35;
-        console.log(service)
-        // console.log(quantity)
+        console.log(quantity)
         const addQuantity = parseInt(e.target.quantity.value)
         // console.log(addQuantity)
         if (addQuantity > 0) {
-            quantity = parseInt(quantity + addQuantity)
-            console.log(quantity)
-            const updateInventory = { stoke: quantity }
-            console.log(updateInventory)
+            quantity = parseInt(quantity) + addQuantity
+            // console.log(quantity)
+            const updateInventory = { quantity }
+            // console.log(updateInventory)
             const url = `https://assigenment-11.herokuapp.com/item/${itemId}`
             // console.log(url)
             fetch(url, {
@@ -61,10 +63,11 @@ const ServiceDetail = () => {
                 headers: {
                     "content-type": "application/json"
                 },
-                body: JSON.stringify(service)
+                body: JSON.stringify(updateInventory)
             })
                 .then(res => res.json())
                 .then(data => {
+                    setService({ ...data, quantity })
                     toast('Quantity updated')
                     e.target.reset()
                 })
@@ -84,13 +87,11 @@ const ServiceDetail = () => {
                 <div className='manage-container p-5'>
                     <img style={{ width: '50px', borderRadius: "20px", marginRight: "8px" }} src={service.img} />
                     <div>
-                        {/* <h5>{service.name}</h5>
-                        <h5>${service.price}</h5> */}
                         <div className='d-flex justify-content-between align-item-center'>
                             <h5>{service.name}</h5>
                             <h5 className='clr-change'>${service.price}</h5>
                             <p><small><span className='fw-bold clr-change'>Seller</span>: {service.seller}</small></p>
-                            <p><small><span className='fw-bold clr-change'>Product Stock</span>: {service.stoke}</small></p>
+                            <p><small><span className='fw-bold clr-change'>Product Stock</span>: {service.quantity}</small></p>
                         </div>
                         <form onSubmit={handleUpdateQuantity} className=''>
                             <input type='number' name='quantity' placeholder='Your quantity' />

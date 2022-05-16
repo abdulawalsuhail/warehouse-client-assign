@@ -33,7 +33,7 @@ const MyItem = () => {
         const email = user.email
 
         const getItem = async () => {
-            const url = `https://assigenment-11.herokuapp.com/item?email=${email}`
+            const url = `https://assigenment-11.herokuapp.com/myItems?email=${email}`
             try {
                 const { data } = await axios.get(url, {
                     headers: {
@@ -58,10 +58,10 @@ const MyItem = () => {
             <h2 className='fw-bold clr-change'>Manage My item</h2>
             <div className='manage-item'>
                 {
-                    myItems.map(item=><ShowMyItem
-                    key={item._id}
-                    item={item}
-                    handleDelete={handleDelete}
+                    myItems.map(item => <ShowMyItem
+                        key={item._id}
+                        item={item}
+                        handleDelete={handleDelete}
                     />)
                 }
             </div>

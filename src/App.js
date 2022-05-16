@@ -14,6 +14,7 @@ import ServiceDetail from './pages/ServiceDetails/ServiceDetails';
 
 import Blogs from './pages/Blogs/Blogs';
 import NotFound from './pages/Shared/NotFound/NotFound';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -39,17 +40,14 @@ function App() {
             <ManageItem />
           </RequireAuth>
         } />
-        {/* <Route path='/checkOut' element={
-          <RequireAuth>
-            <Checkout/>
-          </RequireAuth>
-        }/> */}
+        
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/notfound' element={<NotFound />} />
       </Routes>
       <Footer />
+      <ToastContainer/>
     </div>
   );
 }

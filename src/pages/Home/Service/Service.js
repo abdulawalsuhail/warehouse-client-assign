@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Service.css';
 
 const Service = ({ service }) => {
-    const { _id, name, img, description, price, seller, stoke } = service;
+    const { _id, name, img, description, price, seller, quantity } = service;
     const navigate = useNavigate();
 
     const navigateToServiceDetail = id => {
@@ -17,7 +17,7 @@ const Service = ({ service }) => {
             <div className='d-flex justify-content-between align-item-center '>
                 <h5><span className='fw-bold clr-change'>Price</span>: ${price}</h5>
                 <p><small><span className='fw-bold clr-change'>Seller</span>: {seller}</small></p>
-                <p><small><span className='fw-bold clr-change'>Product Stock</span>: {stoke}</small></p>
+                <p><small><span className='fw-bold clr-change'>Product Stock</span>: {quantity}</small></p>
             </div>
             <div>
                 <button onClick={() => navigateToServiceDetail(_id)} className='btn-us'>Updated {name}</button>
