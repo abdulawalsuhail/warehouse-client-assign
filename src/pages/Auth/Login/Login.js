@@ -5,7 +5,6 @@ import './Login.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import Loading from '../../Shared/Loading/Loading';
 
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
